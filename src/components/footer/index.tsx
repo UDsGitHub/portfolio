@@ -1,8 +1,10 @@
 import useMediaQuery from "../../shared/useMediaQuery";
+import {useRef} from 'react'
 
 type Props = {};
 
 const Footer = (props: Props) => {
+  const currDate = useRef<Date>(new Date())
   const isAboveMediumScreens = useMediaQuery("(min-width: 768px)");
 
   let linkStyles = isAboveMediumScreens ? "hover:ml-4" : "hover:-translate-y-4";
@@ -107,7 +109,7 @@ const Footer = (props: Props) => {
         </li>
       </ul>
       <span>
-        © Copyright 2023. Made by{" "}
+        © Copyright {currDate.current.getFullYear()}. Made by{" "}
         <a href="https://www.linkedin.com/in/udochukwu-amaefule/">
           Udochukwu Amaefule
         </a>
