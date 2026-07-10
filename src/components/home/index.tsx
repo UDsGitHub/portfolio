@@ -12,18 +12,18 @@ const Home = (props: Props) => {
         <h1 className="cursor-default text-primary-100 mb-8">Hi, my name is</h1>
       </div>
       <div>
-        <h2 className="cursor-default text-[#ddd9d5]">Udochukwu Amaefule.</h2>
+        <h2 className="cursor-default bg-gradient-to-r from-[#c6c0b9] to-[#1e1e1e] bg-clip-text text-transparent">Udochukwu Amaefule.</h2>
       </div>
       <div>
-        <h3 className="cursor-default text-[#c6c0b9]">
-          I build things with code 🤖...
+        <h3 className="cursor-default bg-gradient-to-br from-[#c6c0b9] to-[#1e1e1e] bg-clip-text text-transparent">
+          I build things with code...
         </h3>
       </div>
       <div className="text-[#7f7467]">
         <p className="cursor-default mt-8 mb-4 text-xl">
-          🤵 I'm a software developer focused on building{" "}
-          <span className="text-white font-semibold">Digital Solutions</span>{" "}
-          that drive business success ✅.
+          I'm a software developer focused on building{" "}
+          <span className="font-semibold text-[#c6c0b9]">Digital Solutions</span>{" "}
+          that drive business success.
         </p>
         <p className="text-base">
           &mdash; On the side, I engage in artistic antics... more on that when
@@ -34,7 +34,7 @@ const Home = (props: Props) => {
         <a
           href={ResumePDF}
           target="_blank"
-          className="inline-block w-[max-content] text-base mt-12 border border-primary-100 py-5 px-7 rounded-2xl text-primary-100 bg-primary-100 bg-opacity-0 hover:bg-opacity-25 hover:border-white hover:text-white duration-300"
+          className="inline-block w-[max-content] text-base mt-12 border border-primary-100 py-4 px-7 rounded-md text-primary-100 bg-primary-100 bg-opacity-0 hover:bg-opacity-25 hover:border-white hover:text-white duration-300"
         >
           Resume!
         </a>

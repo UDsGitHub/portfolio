@@ -13,7 +13,7 @@ const Navbar = ({ isTopOfPage }: Props) => {
 
   const navbarBackground =
     !isTopOfPage && !isMenuToggled
-      ? "bg-[#1e1e1e]/75 backdrop-blur-md	drop-shadow-md"
+      ? "backdrop-blur-md"
       : "";
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const Navbar = ({ isTopOfPage }: Props) => {
 
   return (
     <>
-      <nav className={`fixed top-0 z-30 py-8 w-full ${navbarBackground}`}>
+      <nav className={`fixed top-0 z-30 py-8 w-full ${navbarBackground} rounded-bl-lg rounded-br-lg`}>
         <div className="flex justify-between items-center w-5/6 mx-auto">
           <div>
             <a

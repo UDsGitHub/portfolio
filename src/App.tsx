@@ -6,6 +6,7 @@ import Projects from "./components/projects";
 import Contact from "./components/contact";
 import Footer from "./components/footer";
 import BounceLoader from "react-spinners/BounceLoader";
+import LinkList from "./components/links/LinkList";
 
 function App() {
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
@@ -42,6 +43,7 @@ function App() {
             <Projects />
             <Contact />
             <Footer />
+            <LinkList />
           </main>
         </>
       )}

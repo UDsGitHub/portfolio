@@ -16,7 +16,7 @@ const Contact = (props: Props) => {
         href="mailto:ud.amaefule@gmail.com"
         rel="noopener noreferrer"
         target="_blank"
-        className="inline-block w-[max-content] text-base mt-8 border border-primary-100 py-5 px-7 rounded-2xl text-primary-100 bg-primary-100 bg-opacity-0 hover:bg-opacity-25 hover:border-white hover:text-white duration-300"
+        className="inline-block w-[max-content] text-base mt-8 border border-primary-100 py-4 px-7 rounded-md text-primary-100 bg-primary-100 bg-opacity-0 hover:bg-opacity-25 hover:border-white hover:text-white duration-300"
       >
         Lets hear it
       </a>
