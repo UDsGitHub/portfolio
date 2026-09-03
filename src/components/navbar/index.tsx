@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
 type Props = {
@@ -9,7 +9,7 @@ const Navbar = ({ isTopOfPage }: Props) => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 768px)");
   const menuRef = useRef<HTMLElement>(null);
-  const menuOpenBtn = useRef<HTMLButtonElement>(null);
+  const menuOpenBtnRef = useRef<HTMLButtonElement>(null);
 
   const navbarBackground =
     !isTopOfPage && !isMenuToggled ? "backdrop-blur-md" : "";
@@ -18,7 +18,7 @@ const Navbar = ({ isTopOfPage }: Props) => {
     function closeMenu(e: MouseEvent) {
       if (isMenuToggled) {
         if (
-          !menuOpenBtn?.current?.contains(e.target as Node) &&
+          !menuOpenBtnRef?.current?.contains(e.target as Node) &&
           !menuRef?.current?.contains(e.target as Node)
         )
           setIsMenuToggled(false);
@@ -53,7 +53,7 @@ const Navbar = ({ isTopOfPage }: Props) => {
             ) : (
               <button
                 onClick={() => setIsMenuToggled(true)}
-                ref={menuOpenBtn}
+                ref={menuOpenBtnRef}
                 className="ml-auto"
               >
                 <svg

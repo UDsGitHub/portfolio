@@ -1,18 +1,13 @@
-import useMediaQuery from "../../hooks/useMediaQuery";
-import { useRef } from "react";
+const currDate = new Date();
 
-type Props = {};
-
-const Footer = (props: Props) => {
-  const currDate = useRef<Date>(new Date());
-
+const Footer = () => {
   return (
     <footer className="text-center text-xs text-neutral-400 py-10 pb-20">
       <span>
         <a href="https://www.linkedin.com/in/udochukwu-amaefule/">
           Udochukwu Amaefule
         </a>{" "}
-        © Copyright {currDate.current.getFullYear()}
+        © Copyright {currDate.getFullYear()}
       </span>
     </footer>
   );

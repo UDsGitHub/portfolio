@@ -46,7 +46,7 @@ const Projects = () => {
     <section id="projects" className="py-[60px] sm:py-[80px] md:py-[100px]">
       <h2 className="section-header">What I've worked on</h2>
       <ul className="proj-container">
-        {ProjectList.map((proj, index) => (
+        {ProjectList.map((proj) => (
           <motion.li
             key={proj.title}
             initial={{ y: 24, opacity: 0.2 }}
