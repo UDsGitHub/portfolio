@@ -68,17 +68,11 @@ const About = () => {
           <h3 className="fascinate-regular-font text-4xl text-neutral-200 my-6">
             SKILLS
           </h3>
-          <motion.div
-            className="skills-grid"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ staggerChildren: 0.08 }}
-          >
-            {skills.map((skill) => (
-              <SkillChip skill={skill} key={skill} />
+          <div className="skills-grid">
+            {skills.map((skill, index) => (
+              <SkillChip skill={skill} key={skill} index={index} />
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

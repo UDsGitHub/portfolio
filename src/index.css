@@ -227,3 +227,7 @@ nav {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   @apply gap-1;
 }
+
+.primary-link {
+  @apply inline-block w-[max-content] text-base mt-8 py-4 px-7 rounded-full bg-primary-100 text-black;
+}

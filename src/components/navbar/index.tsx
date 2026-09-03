@@ -77,7 +77,7 @@ const Navbar = ({ isTopOfPage }: Props) => {
       </nav>
       <aside
         ref={menuRef}
-        className={`p-8 top-0 bottom-0 bg-[#696158] fixed z-40 duration-300 flex justify-center items-center ${
+        className={`p-8 top-0 bottom-0 bg-primary-100 text-black fixed z-40 duration-300 flex justify-center items-center ${
           !isAboveMediumScreens && isMenuToggled
             ? "right-0 opacity-100"
             : "opacity-0 -right-[250px] pointer-events-none"
@@ -104,22 +104,22 @@ const Navbar = ({ isTopOfPage }: Props) => {
         </button>
         <ol className="flex flex-col gap-4 [&>li>a]:text-xl">
           <li>
-            <a href="#home" className="duration-300 hover:text-black">
+            <a href="#home" className="duration-300 hover:text-black uppercase fascinate-regular-font leading-10">
               Home
             </a>
           </li>
           <li>
-            <a href="#about" className="duration-300 hover:text-black">
+            <a href="#about" className="duration-300 hover:text-black uppercase fascinate-regular-font leading-10">
               About
             </a>
           </li>
           <li>
-            <a href="#projects" className="duration-300 hover:text-black">
+            <a href="#projects" className="duration-300 hover:text-black uppercase fascinate-regular-font leading-10">
               Projects
             </a>
           </li>
           <li>
-            <a href="#contact" className="duration-300 hover:text-black">
+            <a href="#contact" className="duration-300 hover:text-black uppercase fascinate-regular-font leading-10">
               Contact
             </a>
           </li>

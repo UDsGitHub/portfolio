@@ -27,10 +27,15 @@ const Contact = () => {
           href="mailto:ud.amaefule@gmail.com"
           rel="noopener noreferrer"
           target="_blank"
-          className="inline-block w-[max-content] text-base mt-8 border border-primary-100 py-4 px-7 rounded-full text-primary-100 hover:text-black hover:bg-primary-100 duration-300"
+          className="primary-link"
           initial={{ y: 12, opacity: 0.2 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.3, delay: 0.1, ease: "easeInOut" }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+            transition: { duration: 0.3, delay: 0.1, ease: "easeInOut" },
+          }}
+          whileHover={{ scale: 1.05, transition: { duration: 0.3, ease: "easeOut" } }}
+          whileTap={{ scale: 0.98, transition: { duration: 0.3, ease: "easeOut" } }}
           viewport={{ once: true, amount: 0 }}
         >
           Contact me
