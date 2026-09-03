@@ -50,9 +50,11 @@ const Home = () => {
       <motion.a
         href={ResumePDF}
         target="_blank"
-        className="inline-block w-[max-content] text-base mt-8 border border-primary-100 py-4 px-7 rounded-full text-primary-100 hover:bg-primary-100 hover:text-black hover:-translate-y-1 duration-300"
+        className="primary-link"
         initial={{ y: 12, opacity: 0.2 }}
         whileInView={{ y: 0, opacity: 1 }}
+        whileHover={{ scale: 1.04, transition: { duration: 0.3, ease: "easeOut" } }}
+        whileTap={{ scale: 0.98, transition: { duration: 0.3, ease: "easeOut" } }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.5 }}
       >
