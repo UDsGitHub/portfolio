@@ -1,31 +1,20 @@
-import { ReactNode } from "react";
 import useMediaQuery from "../../shared/useMediaQuery";
 
-type Props = {
-  url: string;
-  icon: ReactNode;
-};
-
-export default function LinkListItem({
-  url,
-  icon,
-}: Props) {
+export default function LinkListItem({ linkItem }: { linkItem: LinkItem }) {
+  const { title, url, icon } = linkItem;
   const isAboveMediumScreens = useMediaQuery("(min-width: 768px)");
   let linkStyles = isAboveMediumScreens ? "hover:ml-4" : "hover:-translate-y-4";
 
-  const handleClick = () => {
-    window.open(url, "_blank");
-  };
-
   return (
     <li
-      className={
-        "cursor-pointer duration-300 flex justify-end pr-4 w-24 bg-primary-100 py-1 md:py-4 rounded-3xl " +
-        linkStyles
-      }
-      onClick={handleClick}
+      className={`cursor-pointer duration-300 flex bg-primary-100 rounded-3xl ${linkStyles} ${isAboveMediumScreens ? "w-24 pr-4 py-4 justify-end" : "h-24 p-4 items-start"}`}
+      title={title}
     >
-      <a href={url} target={"_blank"} className="inline-block">
+      <a
+        href={url}
+        target={"_blank"}
+        className={`w-full flex justify-end items-center ${isAboveMediumScreens ? "h-full" : ""}`}
+      >
         {icon}
       </a>
     </li>

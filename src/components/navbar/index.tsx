@@ -12,9 +12,7 @@ const Navbar = ({ isTopOfPage }: Props) => {
   const menuOpenBtn = useRef<HTMLButtonElement>(null);
 
   const navbarBackground =
-    !isTopOfPage && !isMenuToggled
-      ? "backdrop-blur-md"
-      : "";
+    !isTopOfPage && !isMenuToggled ? "backdrop-blur-md" : "";
 
   useEffect(() => {
     function closeMenu(e: MouseEvent) {
@@ -32,34 +30,32 @@ const Navbar = ({ isTopOfPage }: Props) => {
 
   return (
     <>
-      <nav className={`fixed top-0 z-30 py-8 w-full ${navbarBackground} rounded-bl-lg rounded-br-lg`}>
-        <div className="flex justify-between items-center w-5/6 mx-auto">
-          <div>
-            <a
-              href="/"
-              className="logo relative flex justify-center items-center font-medium text-xl duration-300 before:bg-primary-100 before:bg-opacity-0 hover:before:bg-opacity-25"
-            >
-              U
-            </a>
-          </div>
-          <div>
+      <nav
+        className={`fixed top-4 left-1/2 -translate-x-1/2 z-30 py-4 w-11/12 duration-300 ${navbarBackground}`}
+      >
+        <div className="flex w-5/6 mx-auto">
+          <>
             {isAboveMediumScreens ? (
-              <ol className="flex gap-6 text-primary-100">
-                <li>
+              <ol className="w-full flex justify-between gap-6 text-primary-100">
+                <li className="navbar-item">
                   <a href="#home">Home</a>
                 </li>
-                <li>
+                <li className="navbar-item">
                   <a href="#about">About</a>
                 </li>
-                <li>
+                <li className="navbar-item">
                   <a href="#projects">Projects</a>
                 </li>
-                <li>
+                <li className="navbar-item">
                   <a href="#contact">Contact</a>
                 </li>
               </ol>
             ) : (
-              <button onClick={() => setIsMenuToggled(true)} ref={menuOpenBtn}>
+              <button
+                onClick={() => setIsMenuToggled(true)}
+                ref={menuOpenBtn}
+                className="ml-auto"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -76,7 +72,7 @@ const Navbar = ({ isTopOfPage }: Props) => {
                 </svg>
               </button>
             )}
-          </div>
+          </>
         </div>
       </nav>
       <aside

@@ -4,10 +4,9 @@ import Proj1 from "../../assets/proj1.jpg";
 import Proj2 from "../../assets/proj2.jpg";
 import Proj3 from "../../assets/proj3.jpg";
 import Proj4 from "../../assets/proj4.jpg";
+import { motion } from "motion/react";
 
-type Props = {};
-
-const Projects = (props: Props) => {
+const Projects = () => {
   const ProjectList: ProjectType[] = [
     {
       img: Proj1,
@@ -45,12 +44,21 @@ const Projects = (props: Props) => {
 
   return (
     <section id="projects" className="py-[60px] sm:py-[80px] md:py-[100px]">
-      <h2>What I've worked on</h2>
+      <h2 className="section-header">What I've worked on</h2>
       <ul className="proj-container">
-        {ProjectList.map((proj) => (
-          <li key={proj.title}>
+        {ProjectList.map((proj, index) => (
+          <motion.li
+            key={proj.title}
+            initial={{ y: 24, opacity: 0.2 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
+            viewport={{ once: true, amount: 0 }}
+          >
             <Project proj={proj} />
-          </li>
+          </motion.li>
         ))}
       </ul>
     </section>

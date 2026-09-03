@@ -1,44 +1,63 @@
 import ResumePDF from "/src/assets/resume.pdf";
+import { motion } from "motion/react";
 
-type Props = {};
-
-const Home = (props: Props) => {
+const Home = () => {
   return (
     <section
       id="home"
       className="min-h-[100vh] md:h-full flex flex-col justify-center"
     >
-      <div>
-        <h1 className="cursor-default text-primary-100 mb-8">Hi, my name is</h1>
-      </div>
-      <div>
-        <h2 className="cursor-default bg-gradient-to-r from-[#c6c0b9] to-[#1e1e1e] bg-clip-text text-transparent">Udochukwu Amaefule.</h2>
-      </div>
-      <div>
-        <h3 className="cursor-default bg-gradient-to-br from-[#c6c0b9] to-[#1e1e1e] bg-clip-text text-transparent">
-          I build things with code...
-        </h3>
-      </div>
-      <div className="text-[#7f7467]">
-        <p className="cursor-default mt-8 mb-4 text-xl">
-          I'm a software developer focused on building{" "}
-          <span className="font-semibold text-[#c6c0b9]">Digital Solutions</span>{" "}
-          that drive business success.
-        </p>
-        <p className="text-base">
-          &mdash; On the side, I engage in artistic antics... more on that when
-          I update this page
-        </p>
-      </div>
-      <div>
-        <a
-          href={ResumePDF}
-          target="_blank"
-          className="inline-block w-[max-content] text-base mt-12 border border-primary-100 py-4 px-7 rounded-md text-primary-100 bg-primary-100 bg-opacity-0 hover:bg-opacity-25 hover:border-white hover:text-white duration-300"
-        >
-          Resume!
-        </a>
-      </div>
+      <motion.h1
+        className="text-primary-100 mb-4 cursive text-3xl"
+        initial={{ y: 12, opacity: 0.2 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5 }}
+      >
+        Hello,
+      </motion.h1>
+      <motion.h2
+        className="text-primary-100"
+        initial={{ y: 12, opacity: 0.2 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
+        I'm Udochukwu Amaefule.
+      </motion.h2>
+      <motion.h3
+        className="italic bg-gradient-to-br from-[#c6c0b9] to-[#1e1e1e] bg-clip-text text-transparent"
+        initial={{ y: 12, opacity: 0.2 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, delay: 0.15 }}
+      >
+        Frontend leaning Full stack engineer
+      </motion.h3>
+      <motion.span
+        className="text-base text-[#7f7467] mt-8 mb-4"
+        initial={{ y: 12, opacity: 0.2 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, delay: 0.22 }}
+      >
+        <q className="italic">
+          Might not have the best eye for design but I have learned to engineer
+          frontends and optimize for UX.
+        </q>{" "}
+        - Wise man
+      </motion.span>
+      <motion.a
+        href={ResumePDF}
+        target="_blank"
+        className="inline-block w-[max-content] text-base mt-8 border border-primary-100 py-4 px-7 rounded-full text-primary-100 hover:bg-primary-100 hover:text-black hover:-translate-y-1 duration-300"
+        initial={{ y: 12, opacity: 0.2 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5 }}
+      >
+        Resume
+      </motion.a>
     </section>
   );
 };
