@@ -1,4 +1,5 @@
-import useMediaQuery from "../../shared/useMediaQuery";
+import useMediaQuery from "../../hooks/useMediaQuery";
+import type { LinkItem } from "./types";
 
 export default function LinkListItem({ linkItem }: { linkItem: LinkItem }) {
   const { title, url, icon } = linkItem;

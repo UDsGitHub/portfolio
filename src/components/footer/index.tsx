@@ -1,4 +1,4 @@
-import useMediaQuery from "../../shared/useMediaQuery";
+import useMediaQuery from "../../hooks/useMediaQuery";
 import { useRef } from "react";
 
 type Props = {};

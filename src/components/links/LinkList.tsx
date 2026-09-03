@@ -1,5 +1,6 @@
-import useMediaQuery from "../../shared/useMediaQuery";
+import useMediaQuery from "../../hooks/useMediaQuery";
 import LinkListItem from "./LinkListItem";
+import type { LinkItem } from "./types";
 
 const links: LinkItem[] = [
   {
@@ -96,7 +97,7 @@ export default function LinkList() {
       }`}
     >
       {links.map((link) => (
-        <LinkListItem linkItem={link} />
+        <LinkListItem key={link.title} linkItem={link} />
       ))}
     </ul>
   );

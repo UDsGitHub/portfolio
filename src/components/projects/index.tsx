@@ -1,5 +1,5 @@
 import Project from "./Project";
-import { ProjectType } from "../../shared/types";
+import type { ProjectType } from "./types";
 import Proj1 from "../../assets/proj1.jpg";
 import Proj2 from "../../assets/proj2.jpg";
 import Proj3 from "../../assets/proj3.jpg";
