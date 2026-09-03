@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     setLoading(true);
-    setTimeout(() => setLoading(false), 3000);
+    setTimeout(() => setLoading(false), 1500);
   }, []);
 
   useEffect(() => {
@@ -29,24 +29,16 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      {loading ? (
-        <div className="bg-[#1e1e1e] absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center animate-[fadeOut_1500ms_ease-out_1500ms]">
-          <BounceLoader color="#BBB4AB" size={150} loading={loading} />
-        </div>
-      ) : (
-        <>
-          <Navbar isTopOfPage={isTopOfPage} />
-          <main className="pt-[82px] max-w-[1600px] w-full mx-auto px-[50px] md:px-[100px] lg:px-[150px]">
-            <Home />
-            <About />
-            <Projects />
-            <Contact />
-            <Footer />
-            <LinkList />
-          </main>
-        </>
-      )}
+    <div className="app text-white">
+      <Navbar isTopOfPage={isTopOfPage} />
+      <main className="pt-[82px] max-w-[1600px] w-full mx-auto px-[50px] md:px-[100px] lg:px-[150px]">
+        <Home />
+        <About />
+        <Projects />
+        <Contact />
+        <Footer />
+        <LinkList />
+      </main>
     </div>
   );
 }

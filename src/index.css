@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Montserrat:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Niconne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fascinate&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -8,16 +10,32 @@
 html,
 body,
 #root,
-.App,
+.app,
 main {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   font-family: "DM Sans", sans-serif;
-  @apply text-white;
   font-size: 16px;
+  cursor: default;
 }
 
-html{
+html,
+body,
+#root {
+  @apply bg-primary-100;
+}
+
+#root {
+  @apply pt-2;
+}
+
+.app {
+  @apply bg-neutral-900;
+  border-top-left-radius: clamp(5vw, 10vw, 100px);
+  border-top-right-radius: clamp(5vw, 10vw, 100px);
+}
+
+html {
   scroll-behavior: smooth;
 }
 
@@ -27,8 +45,24 @@ body {
   overflow-x: hidden;
 }
 
-aside{
+aside {
   width: min(75vw, 400px);
+}
+
+.cursive {
+  font-family: "Niconne", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fascinate-regular-font {
+  font-family: "Fascinate", system-ui;
+  font-style: normal;
+}
+
+.montserrat-font {
+  font-family: "Montserrat", system-ui;
+  font-style: normal;
 }
 
 main {
@@ -36,7 +70,7 @@ main {
   counter-reset: section 0;
 }
 
-main section > h2 {
+.section-header {
   counter-increment: section;
   margin: 10px 0 40px;
   font-size: clamp(26px, 5vw, 32px);
@@ -51,14 +85,14 @@ p {
   @apply text-xl;
 }
 
-main section > h2::before {
+.section-header::before {
   content: "0" counter(section) ". ";
   font-family: "Roboto Mono", sans-serif;
   font-weight: 400;
   @apply text-white;
 }
 
-main section > h2::after {
+.section-header::after {
   content: "";
   display: block;
   position: relative;
@@ -84,12 +118,6 @@ h2 {
   line-height: 1.1;
 }
 
-h3 {
-  line-height: 0.9;
-  font-size: clamp(40px, 6vw, 70px);
-  font-weight: 600;
-}
-
 .logo::before {
   content: "";
   position: absolute;
@@ -106,58 +134,38 @@ h3 {
   background: rgba(255, 255, 255, 0.15);
 }
 
-ol {
-  counter-reset: items;
+nav {
+  border-radius: clamp(5vw, 10vw, 100px);
 }
 
-ol li {
-  transition: 300ms;
+.navbar-item {
+  @apply relative bg-primary-100/5 p-4 px-8 rounded-full flex-1 max-w-[320px] cursor-pointer overflow-hidden duration-300;
 }
 
-ol li:hover {
-  color: white;
-}
-
-ol a {
-  counter-increment: items;
-  letter-spacing: 0.15em;
-  font-size: 13px;
-}
-
-ol a::before {
-  content: "0" counter(items) ". ";
-  @apply text-white;
-}
-
-ol a:nth-child(n + 100):before {
-  content: counter(items) ". ";
-}
-
-.profile-container::before {
+.navbar-item::before {
   content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  @apply bg-primary-100 rounded-md;
-  opacity: 0.3;
-  transition: 300ms;
+  z-index: -1;
+  @apply absolute inset-0 w-full h-full rounded-full bg-primary-100 -translate-x-[calc(100%+1rem)] duration-300;
+}
+
+.navbar-item:hover {
+  color: black;
+}
+
+.navbar-item:hover::before {
+  @apply translate-x-0;
 }
 
 .profile-container::after {
   content: "";
-  display: block;
-  position: absolute;
-  width: 300px;
-  height: 300px;
+  @apply block absolute inset-0 bg-primary-100 rounded-md opacity-30 duration-300;
+}
+
+.profile-container::before {
+  content: "";
+  @apply block absolute w-[300px] h-[300px] border-primary-100 rounded-md border-2 duration-300;
   top: 8%;
   left: 8%;
-  border: 2px solid;
-  z-index: -1;
-  @apply border-primary-100 rounded-md;
-  transition: 300ms;
 }
 
 .profile-container:hover::before {
@@ -205,7 +213,17 @@ ol a:nth-child(n + 100):before {
   opacity: 0;
 }
 
- @keyframes fadeOut {
-    from {opacity: 1}
-    to {opacity: 0}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
   }
+  to {
+    opacity: 0;
+  }
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  @apply gap-1;
+}
