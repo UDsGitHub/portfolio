@@ -36,8 +36,8 @@ const Project = ({ proj }: Props) => {
         </div>
         {/* TECH STACK */}
         <ul className="flex gap-5 mb-5">
-          {proj.tech.map((techItem, index) => (
-            <li key={index}>
+          {proj.tech.map((techItem) => (
+            <li key={techItem}>
               <p className="text-sm">{techItem}</p>
             </li>
           ))}
