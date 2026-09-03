@@ -93,7 +93,7 @@ export default function LinkList() {
       className={`fixed bottom-0 flex justfiy-center items-center w-fit mx-auto text-black gap-2 z-20 ${
         isAboveMediumScreens
           ? "-left-10 flex-col py-6 mb-0 rounded-tr-md"
-          : "-bottom-10 right-10"
+          : "-bottom-12 right-10"
       }`}
     >
       {links.map((link) => (
