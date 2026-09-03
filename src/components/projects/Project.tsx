@@ -1,5 +1,5 @@
-import { ProjectType } from "../../shared/types";
-import useMediaQuery from "../../shared/useMediaQuery";
+import type { ProjectType } from "./types";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 type Props = {
   proj: ProjectType;

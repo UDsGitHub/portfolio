@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import useMediaQuery from "../../shared/useMediaQuery";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 type Props = {
   isTopOfPage: boolean;
@@ -104,22 +104,34 @@ const Navbar = ({ isTopOfPage }: Props) => {
         </button>
         <ol className="flex flex-col gap-4 [&>li>a]:text-xl">
           <li>
-            <a href="#home" className="duration-300 hover:text-black uppercase fascinate-regular-font leading-10">
+            <a
+              href="#home"
+              className="duration-300 hover:text-black uppercase fascinate-regular-font leading-10"
+            >
               Home
             </a>
           </li>
           <li>
-            <a href="#about" className="duration-300 hover:text-black uppercase fascinate-regular-font leading-10">
+            <a
+              href="#about"
+              className="duration-300 hover:text-black uppercase fascinate-regular-font leading-10"
+            >
               About
             </a>
           </li>
           <li>
-            <a href="#projects" className="duration-300 hover:text-black uppercase fascinate-regular-font leading-10">
+            <a
+              href="#projects"
+              className="duration-300 hover:text-black uppercase fascinate-regular-font leading-10"
+            >
               Projects
             </a>
           </li>
           <li>
-            <a href="#contact" className="duration-300 hover:text-black uppercase fascinate-regular-font leading-10">
+            <a
+              href="#contact"
+              className="duration-300 hover:text-black uppercase fascinate-regular-font leading-10"
+            >
               Contact
             </a>
           </li>
