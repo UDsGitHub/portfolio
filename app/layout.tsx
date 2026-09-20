@@ -44,7 +44,11 @@ export const metadata: Metadata = {
     "Portfolio of Udochukwu Amaefule — frontend-leaning full stack engineer.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html
       lang="en"
